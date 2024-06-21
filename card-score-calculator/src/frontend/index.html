@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Score Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="app.js"></script>
+</head>
+<body>
+    <table cellpadding="2" cellspacing="4" style="width: 100%; margin-top: 1em; vertical-align: top;">
+        <tr>
+            <th class="title-bar">Love Live Score Calculator</th>
+        </tr>
+    </table>
+    <center>
+    <nav>
+        <button id="home">Home</button>
+        <button id="gacha">Gacha</button>
+        <button id="inventory">Inventory</button>
+        <button id="teams">Teams</button>
+    </nav>
+
+    <div id="views">
+        <div id="loginView" class="view">
+            <header><bold><h1>Login</h1></bold></header>
+            <center>
+            <form>
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required><br><br>
+
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required><br><br>
+
+                <button type="login">Login</button>
+            </form>
+            </center>
+        </div>
+        <div id="homeView" class="view">
+            <center><h1>Menu</h1></center>
+            <div class="image-container">
+                <div class="image-item">
+                    <div class="image-box">
+                        <img src="https://i.idol.st/static/img/i_rarity/2.png?0.9-sif2-collect" id="gachaImg" class="page-img" alt="Gacha Image" style="height: 100%">
+                        <div class="zoom-overlay"></div>
+                    </div>
+                    <center><p><bold>Gacha Page</bold></p></center>
+                </div>
+                <div class="image-item">
+                    <div class="image-box">
+                        <img src="https://i.idol.st/u/card/art/2x/925UR-Miyashita-Ai-It-s-Kind-of-Embarrassing-Mysterious-Jewelry-1srcT6.png" id="inventoryImg" class="page-img" alt="Inventory Image">
+                        <div class="zoom-overlay"></div>
+                    </div>
+                    <center><p><bold>Inventory Page</bold></p></center>
+                </div>
+                <div class="image-item">
+                    <div class="image-box">
+                        <img src="https://i.idol.st/u/still/2x/343Still-Nijigasaki-High-School-Idol-Club-X4oJTp.png" id="teamsImg" class="page-img" alt="Teams Image">
+                        <div class="zoom-overlay"></div>
+                    </div>
+                    <center><p><bold>Teams Page</bold></p></center>
+                </div>
+            </div>
+        </div>
+        <div id="gachaView" class="view">
+            <h1>temp gacha text!</h1>
+        </div>
+        <div id="inventoryView" class="view">
+            <h1>temp inventory view!</h1>
+        </div>
+        <div id="teamsView" class="view">
+            <h1>temp teams view!</h1>
+        </div>
+    </div>
+    </center>
+    <main>
+    </main>
+    <footer>
+        <p>&copy; 2024 My Web Application</p>
+    </footer>
+</body>
+</html>

@@ -65,11 +65,46 @@
         <div id="gachaView" class="view">
             <h1>temp gacha text!</h1>
         </div>
+        <center>
         <div id="inventoryView" class="view">
-            <h1>temp inventory view!</h1>
+            <h1>Inventory</h1>
+            <div class="row-container" id="cardsRow">
+            </div>
         </div>
+        </center>
         <div id="teamsView" class="view">
-            <h1>temp teams view!</h1>
+            <h1>Teams</h1>
+            <div class="team-container">
+                <div class="team">
+                    <button class="team-button" data-team="team1View">Team 1</button>
+                    <div class="row-container" id="team1CardsPreview"></div>
+                </div>
+                <div class="team">
+                    <button class="team-button" data-team="team2View">Team 2</button>
+                    <div class="row-container" id="team2CardsPreview"></div>
+                </div>
+                <div class="team">
+                    <button class="team-button" data-team="team3View">Team 3</button>
+                    <div class="row-container" id="team3CardsPreview"></div>
+                </div>
+            </div>
+        </div>
+        <div id="team1View" class="view">
+            <h1>Team 1</h1>
+            <div class="row-container" id="team1CardsRow"></div>
+        </div>
+        <div id="team2View" class="view">
+            <h1>Team 2</h1>
+            <div class="row-container" id="team2CardsRow"></div>
+        </div>
+        <div id="team3View" class="view">
+            <h1>Team 3</h1>
+            <div class="row-container" id="team3CardsRow"></div>
+        </div>
+        <div class="team-edit" id="teamEdit">
+            <h2>Edit Team</h2>
+            <div class="row-container" id="teamCardsRow">
+            </div>
         </div>
     </div>
     </center>

@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // function that saves a newly registered user to the current list of users
     function saveUserInformation(users) {
-        localStorage.setItem("users", JSON.stringify(users));
+        localStorage.setItem('users', JSON.stringify(users));
     }
 
     // function to hide/show the menu if a user isn't/is logged in
@@ -52,7 +52,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-    // event listener for when the user type in a username and password for the first time
+    // event listener for when you type in a username and password for the first time
     registerInformation.addEventListener("submit", (x) => {
         x.preventDefault();
         const username = document.getElementById('registeredUsername').value;
@@ -86,7 +86,7 @@ document.addEventListener("DOMContentLoaded", () => {
             alert("Successful login, welcome!");
             navigate("homeView");
 
-            // shows the menu after the user log in successfully
+             // shows the menu after the user log in successfully
             showMenu(true);
         } else {
             alert("The username or password you have entered is incorrect.");
@@ -100,16 +100,16 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     // switches to loginView when the user click the showLogin element
-    showLogin.addEventListener('click', (x) => {
+    showLogin.addEventListener("click", (x) => {
         x.preventDefault();
         navigate("loginView");
     });
 
-    // Initialize with the login view and hide menu initially
+   // initialize with the login view and hide menu initially
     showMenu(false);
     navigate("loginView");
 
-    // Fetch card data and display in the inventory view and team views
+    // fetch card data and display in the inventory view and team views
     // EVERYTHING BELOW HERE IS TEMPORARY, JUST SETTING THE LAYOUT!
     fetch("cards.json")
         .then(response => response.json())
@@ -125,8 +125,8 @@ document.addEventListener("DOMContentLoaded", () => {
             const teamOne_CardsRow = document.getElementById("teamOne_CardsRow");
             const teamOne_CardsPreview = document.getElementById("teamOne_CardsPreview");
 
-            teamOne_CardsRow.innerHTML = "";
-            teamOne_CardsPreview.innerHTML = "";
+            teamOne_CardsRow.innerHTML = '';
+            teamOne_CardsPreview.innerHTML = '';
 
             // create card items with dropdown and set button for Team 1 - in progress!
             data.cards.slice(0, 5).forEach(card => {
@@ -159,19 +159,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
             // team navigation and editing - (THIS CODE IS TEMPORARY UNTIL THE BACKEND IS IMPLEMENTED)
             document.querySelectorAll(".team-button").forEach(button => {
-                button.addEventListener("click", (c) => {
-                    const teamId = c.target.getAttribute("data-team");
+                button.addEventListener("click", (x) => {
+                    const teamId = x.target.getAttribute("data-team");
                     navigate(teamId);
                 });
             });
 
             document.querySelectorAll(".team-button").forEach(button => {
                 button.addEventListener("dblclick", (x) => {
-                    const teamEdit = document.getElementById("teamEdit");
+                    const teamEdit = x.getElementById("teamEdit");
                     teamEdit.classList.remove("active");
-                    const teamId = x.target.getAttribute("data-team");
+                    const teamId = event.target.getAttribute("data-team");
                     const teamCardsRow = document.getElementById("teamCardsRow");
-                    teamCardsRow.innerHTML = "";
+                    teamCardsRow.innerHTML = '';
 
                     let teamCards = [];
                     if (teamId === "team1View") {

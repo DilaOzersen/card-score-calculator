@@ -50,6 +50,7 @@ button {
     cursor: pointer;
 }
 
+/* image container for the menu page + zoom logic for when the user hovers over them */
 .image-container {
     display: flex;
     justify-content: center;
@@ -113,6 +114,7 @@ button {
     transform: scale(1.2);
 }
 
+/* applies attributes to all the icons in rows */
 .row-container {
     display: flex;
     justify-content: center;
@@ -136,6 +138,7 @@ button {
     display: block;
 }
 
+/* teams-list attributes */
 .teams-list {
     display: flex;
     justify-content: center;

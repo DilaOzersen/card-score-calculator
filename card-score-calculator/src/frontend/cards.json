@@ -104,6 +104,48 @@
         "stamina 80": 2620,
         "technique 80": 1996,
         "leaderSkill": "6.6% Health"
+      },
+      {
+        "id": 6,
+        "name": "Hanayo, I Found You!",
+        "character": "Kunikida Hanamaru",
+        "rarity": "UR",
+        "rarity-image": "https://i.idol.st/static/img/i_rarity/2.png",
+        "icon": "https://i.idol.st/u/card/icon/863UR-Kunikida-Hanamaru-%E8%8A%B1%E9%99%BD%E3%81%A1%E3%82%83%E3%82%93-%E3%81%BF%E3%83%BC%E3%81%A4%E3%81%91%E3%81%9F-Fierce-Flash-Lightning-Girls-ORBJnE.png",
+        "previewImage": "https://i.idol.st/u/card/art/2x/863UR-Kunikida-Hanamaru-Hanayo-I-Found-You-Fierce-Flash-Lightning-Girls-ltd9RY.png",
+        "type": "Elegant",
+        "type-image": "https://i.idol.st/static/img/i_allstars_attribute/3.png",
+        "skillIcon": "https://i.idol.st/u/card/skill/14Stamina-Restored-Restore-value1-of-own-stamina-QexXgt.png",
+        "skill": "Guard",
+        "skillDescription": "20% Healing",
+        "appeal 1": 1239,
+        "stamina 1": 2079,
+        "technique 1": 1106,
+        "appeal 80": 2065,
+        "stamina 80": 3466,
+        "technique 80": 1843,
+        "leaderSkill": "60% Health"
+      },
+      {
+        "id": 7,
+        "name": "*Giggle* Good Night",
+        "character": "Ohara Mari",
+        "rarity": "SR",
+        "rarity-image": "https://i.idol.st/static/img/i_rarity/1.png",
+        "icon": "https://i.idol.st/u/card/icon/853SR-Ohara-Mari-%E3%81%B5%E3%81%B5-%E3%81%8A%E3%82%84%E3%81%99%E3%81%BF%E3%81%AA%E3%81%95%E3%81%84-Kimi-no-Hitomi-o-Meguru-Bouken-GPKoXh.png",
+        "previewImage": "https://i.idol.st/u/card/art/2x/853SR-Ohara-Mari-Giggle-Good-Night-Kimi-no-Hitomi-o-Meguru-Bouken-oF2jqD.png",
+        "type": "Pure",
+        "type-image": "https://i.idol.st/u/card/skill/14Stamina-Restored-Restore-value1-of-own-stamina-QexXgt.png",
+        "skillIcon": "https://i.idol.st/u/card/skill/4SP-Skill-Up-Voltage-gained-from-next-SP-Skill-increases-by-value1-of-own-Ap-eAKQ1L.png",
+        "skill": "Attack",
+        "skillDescription": "12% Appeal",
+        "appeal 1": 1772,
+        "stamina 1": 1055,
+        "technique 1": 1392,
+        "appeal 80": 2658,
+        "stamina 80": 1582,
+        "technique 80": 2088,
+        "leaderSkill": "3% Appeal"
       }
     ]
   }

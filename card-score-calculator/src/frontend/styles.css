@@ -1,3 +1,4 @@
+/* the title bar that appears at the top of every screen! */
 .title-bar {
     background-image: url("https://static.wikia.nocookie.net/love-live-all-stars/images/9/95/Title_background.png");
     background-size: contain;
@@ -10,6 +11,7 @@
     padding: 10px;
 }
 
+/* custom css for every button that appears on the website! */
 button {
     margin-top: 10px;
     padding: 10px 20px;
@@ -22,6 +24,7 @@ button {
     transition: background-color 0.3s ease;
 }
 
+/* setting up each of the views */
 #views {
     padding: 20px;
     text-align: left;
@@ -34,6 +37,7 @@ button {
     display: none;
 }
 
+/* hovering over each image should turn the cursor into a pointer */
 #gachaImg {
     cursor: pointer;
 }
@@ -68,7 +72,6 @@ button {
     align-items: center;
 }
 
-/* oh look a comment */
 .page-img {
     width: 150%;
     height: 150%;
@@ -121,8 +124,8 @@ button {
 }
 
 .row-container img {
-    margin: 10px; /* Adjust margin as needed */
-    height: 50px; /* Adjust height as needed */
+    margin: 10px; 
+    height: 100px;
 }
 
 .view {

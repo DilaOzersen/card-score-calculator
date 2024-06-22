@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Score Calculator</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="app.js"></script>
+    <script src="app.js" defer></script>
 </head>
 <body>
     <table cellpadding="2" cellspacing="4" style="width: 100%; margin-top: 1em; vertical-align: top;">
@@ -14,34 +14,43 @@
         </tr>
     </table>
     <center>
-    <nav>
-        <button id="home">Home</button>
-        <button id="gacha">Gacha</button>
-        <button id="inventory">Inventory</button>
-        <button id="teams">Teams</button>
-    </nav>
+        <nav id="menu" style="display: none;">
+            <button id="home">Home</button>
+            <button id="gacha">Gacha</button>
+            <button id="inventory">Inventory</button>
+            <button id="teams">Teams</button>
+        </nav>
+    </center>
 
     <div id="views">
         <div id="loginView" class="view">
-            <header><bold><h1>Login</h1></bold></header>
-            <center>
-            <form>
-                <label for="username">Username:</label>
-                <input type="text" id="username" name="username" required><br><br>
-
-                <label for="password">Password:</label>
-                <input type="password" id="password" name="password" required><br><br>
-
-                <button type="login">Login</button>
+            <header><h1>Login</h1></header>
+            <form id="loginInformation">
+                <label for="loginUsername">Username:</label>
+                <input type="text" id="loginUsername" name="loginUsername" required><br><br>
+                <label for="loginPassword">Password:</label>
+                <input type="password" id="loginPassword" name="loginPassword" required><br><br>
+                <button type="submit">Login</button>
             </form>
-            </center>
+            <p>Don't have an account? <a href="#" id="showRegister">Register</a></p>
         </div>
-        <div id="homeView" class="view">
+        <div id="registerView" class="view" style="display:none;">
+            <header><h1>Register</h1></header>
+            <form id="registerInformation">
+                <label for="registeredUsername">Username:</label>
+                <input type="text" id="registeredUsername" name="registeredUsername" required><br><br>
+                <label for="registeredPassword">Password:</label>
+                <input type="password" id="registeredPassword" name="registeredPassword" required><br><br>
+                <button type="submit">Register</button>
+            </form>
+            <p>Already have an account? <a href="#" id="showLogin">Login</a></p>
+        </div>
+        <div id="homeView" class="view" style="display:none;">
             <center><h1>Menu</h1></center>
             <div class="image-container">
                 <div class="image-item">
                     <div class="image-box">
-                        <img src="https://i.idol.st/static/img/i_rarity/2.png?0.9-sif2-collect" id="gachaImg" class="page-img" alt="Gacha Image" style="height: 100%">
+                        <img src="https://www.klab.com/jp/press/assets/past/ASKY23G.jpg" id="gachaImg" class="page-img" alt="Gacha Image" style="height: 100%">
                         <div class="zoom-overlay"></div>
                     </div>
                     <center><p><bold>Gacha Page</bold></p></center>
@@ -62,17 +71,19 @@
                 </div>
             </div>
         </div>
-        <div id="gachaView" class="view">
-            <h1>temp gacha text!</h1>
+        <div id="gachaView" class="view" style="display:none;">
+            <center><h1><bold>Gacha Page</bold></h1>
+            <img src="https://www.klab.com/jp/press/assets/past/tex_banner_notice_l_40001.en.jpg" id="gachaBanner" style="height: 200px">
+            <br>
+            <button type="gachaPull">Pull!</button>
+            </center>
         </div>
-        <center>
-        <div id="inventoryView" class="view">
+        <div id="inventoryView" class="view" style="display:none;">
             <h1>Inventory</h1>
             <div class="row-container" id="cardsRow">
             </div>
         </div>
-        </center>
-        <div id="teamsView" class="view">
+        <div id="teamsView" class="view" style="display:none;">
             <h1>Teams</h1>
             <div class="team-container">
                 <div class="team">
@@ -89,27 +100,40 @@
                 </div>
             </div>
         </div>
-        <div id="team1View" class="view">
+        <div id="team1View" class="view" style="display:none;">
             <h1>Team 1</h1>
             <div class="row-container" id="team1CardsRow"></div>
+                <div class="card-item">
+                    <img src="card-image-url" alt="Card Name">
+                    <select class="card-dropdown">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                    <button class="set-button">Set</button>
+                </div>
+            <center>
+                <label for="totalPointsTeam1">Total Score:</label> Temporary Score Number
+                <br>
+                <label for="leaderSkill">Leader's Skill:</label> Leader Skill Text
+            </center>
         </div>
-        <div id="team2View" class="view">
+        <div id="team2View" class="view" style="display:none;">
             <h1>Team 2</h1>
             <div class="row-container" id="team2CardsRow"></div>
         </div>
-        <div id="team3View" class="view">
+        <div id="team3View" class="view" style="display:none;">
             <h1>Team 3</h1>
             <div class="row-container" id="team3CardsRow"></div>
         </div>
-        <div class="team-edit" id="teamEdit">
+        <div class="team-edit" id="teamEdit" style="display:none;">
             <h2>Edit Team</h2>
             <div class="row-container" id="teamCardsRow">
             </div>
         </div>
     </div>
-    </center>
-    <main>
-    </main>
     <footer>
         <p>&copy; 2024 My Web Application</p>
     </footer>

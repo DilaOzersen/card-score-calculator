@@ -75,7 +75,9 @@
             <center><h1><bold>Gacha Page</bold></h1>
             <img src="https://www.klab.com/jp/press/assets/past/tex_banner_notice_l_40001.en.jpg" id="gachaBanner" style="height: 200px">
             <br>
-            <button type="gachaPull">Pull!</button>
+            <button type="gachaPull" id="gachaButton">Pull!</button>
+            <div id="cardDisplay">
+            </div>
             </center>
         </div>
         <div id="inventoryView" class="view" style="display:none;">
@@ -87,51 +89,63 @@
             <h1>Teams</h1>
             <div class="team-container">
                 <div class="team">
-                    <button class="team-button" data-team="team1View">Team 1</button>
+                    <button class="team-button" id="team1Button">Team 1</button>
                     <div class="row-container" id="teamOne_CardsPreview"></div>
                 </div>
                 <div class="team">
-                    <button class="team-button" data-team="team2View">Team 2</button>
+                    <button class="team-button" id="team2Button">Team 2</button>
                     <div class="row-container" id="teamTwo_CardsPreview"></div>
                 </div>
                 <div class="team">
-                    <button class="team-button" data-team="team3View">Team 3</button>
+                    <button class="team-button" id="team3Button">Team 3</button>
                     <div class="row-container" id="teamThree_CardsPreview"></div>
                 </div>
             </div>
         </div>
         <div id="team1View" class="view" style="display:none;">
             <h1>Team 1</h1>
-            <div class="row-container" id="teamOne_CardsRow"></div>
-                <div class="card-item">
-                    <img src="card-image-url" alt="Card Name">
-                    <select class="card-dropdown">
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                    </select>
-                    <button class="set-button">Set</button>
-                </div>
+            <div class="row-container" id="teamOne_CardsRow">
+                <div class="card-slot" data-slot="1"></div>
+                <div class="card-slot" data-slot="2"></div>
+                <div class="card-slot" data-slot="3"></div>
+                <div class="card-slot" data-slot="4"></div>
+                <div class="card-slot" data-slot="5"></div>
+            </div>
             <center>
-                <label for="totalPointsTeam1">Total Score:</label> Temporary Score Number
+                <label for="totalPointsTeam1">Total Score:</label> <span id="totalScoreTeam1">0</span>
                 <br>
-                <label for="leaderSkill">Leader's Skill:</label> Leader Skill Text
+                <label for="leaderSkill">Leader's Skill:</label> <span id="leaderSkillTeam1">None</span>
             </center>
         </div>
         <div id="team2View" class="view" style="display:none;">
             <h1>Team 2</h1>
-            <div class="row-container" id="teamTwo_CardsRow"></div>
+            <div class="row-container" id="teamTwo_CardsRow">
+                <div class="card-slot" data-slot="1"></div>
+                <div class="card-slot" data-slot="2"></div>
+                <div class="card-slot" data-slot="3"></div>
+                <div class="card-slot" data-slot="4"></div>
+                <div class="card-slot" data-slot="5"></div>
+            </div>
+            <center>
+                <label for="totalPointsTeam2">Total Score:</label> <span id="totalScoreTeam2">0</span>
+                <br>
+                <label for="leaderSkill">Leader's Skill:</label> <span id="leaderSkillTeam2">None</span>
+            </center>
         </div>
         <div id="team3View" class="view" style="display:none;">
             <h1>Team 3</h1>
-            <div class="row-container" id="teamThree_CardsRow"></div>
-        </div>
-        <div class="team-edit" id="teamEdit" style="display:none;">
-            <h2>Edit Team</h2>
-            <div class="row-container" id="teamCardsRow">
+            <div class="row-container" id="teamThree_CardsRow">
+                <div class="card-slot" data-slot="1"></div>
+                <div class="card-slot" data-slot="2"></div>
+                <div class="card-slot" data-slot="3"></div>
+                <div class="card-slot" data-slot="4"></div>
+                <div class="card-slot" data-slot="5"></div>
             </div>
+            <center>
+                <label for="totalPointsTeam3">Total Score:</label> <span id="totalScoreTeam3">0</span>
+                <br>
+                <label for="leaderSkill">Leader's Skill:</label> <span id="leaderSkillTeam3">None</span>
+            </center>
         </div>
     </div>
     <footer>

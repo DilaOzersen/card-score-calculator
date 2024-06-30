@@ -27,6 +27,8 @@
     "start": "http-server src/frontend -p 3000 -c-1 -o -s"
   },
   "dependencies": {
-    "http-server": "^14.1.1"
+    "express": "^4.19.2",
+    "http-server": "^14.1.1",
+    "pouchdb": "^9.0.0"
   }
 }

@@ -48,7 +48,7 @@ async function populateDatabase() {
                 }
             }
             console.log('Initial data loaded into PouchDB');
-            verifyData(); // Call verification after population
+            verifyData();
         });
     } catch (error) {
         console.error('Error populating database:', error);

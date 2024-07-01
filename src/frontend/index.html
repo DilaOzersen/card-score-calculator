@@ -105,11 +105,41 @@
         <div id="team1View" class="view" style="display:none;">
             <h1>Team 1</h1>
             <div class="row-container" id="teamOne_CardsRow">
-                <div class="card-slot" data-slot="1"></div>
-                <div class="card-slot" data-slot="2"></div>
-                <div class="card-slot" data-slot="3"></div>
-                <div class="card-slot" data-slot="4"></div>
-                <div class="card-slot" data-slot="5"></div>
+                <div>
+                    <label for="card1Dropdown">Card 1:</label>
+                    <select id="team1Card1Dropdown" onchange="displayCardIcon('team1Card1Dropdown', 'team1Card1Icon')">
+                        <option value="">Select a card</option>
+                    </select>
+                    <img id="team1Card1Icon" class="card-icon" src="" alt="Card Icon">
+                </div>
+                <div>
+                    <label for="card2Dropdown">Card 2:</label>
+                    <select id="team1Card2Dropdown" onchange="displayCardIcon('team1Card2Dropdown', 'team1Card2Icon')">
+                        <option value="">Select a card</option>
+                    </select>
+                    <img id="team1Card2Icon" class="card-icon" src="" alt="Card Icon">
+                </div>
+                <div>
+                    <label for="card3Dropdown">Card 3:</label>
+                    <select id="team1Card3Dropdown" onchange="displayCardIcon('team1Card3Dropdown', 'team1Card3Icon')">
+                        <option value="">Select a card</option>
+                    </select>
+                    <img id="team1Card3Icon" class="card-icon" src="" alt="Card Icon">
+                </div>
+                <div>
+                    <label for="card4Dropdown">Card 4:</label>
+                    <select id="team1Card4Dropdown" onchange="displayCardIcon('team1Card4Dropdown', 'team1Card4Icon')">
+                        <option value="">Select a card</option>
+                    </select>
+                    <img id="team1Card4Icon" class="card-icon" src="" alt="Card Icon">
+                </div>
+                <div>
+                    <label for="card5Dropdown">Card 5:</label>
+                    <select id="team1Card5Dropdown" onchange="displayCardIcon('team1Card5Dropdown', 'team1Card5Icon')">
+                        <option value="">Select a card</option>
+                    </select>
+                    <img id="team1Card5Icon" class="card-icon" src="" alt="Card Icon">
+                </div>
             </div>
             <center>
                 <label for="totalPointsTeam1">Total Score:</label> <span id="totalScoreTeam1">0</span>
@@ -120,11 +150,6 @@
         <div id="team2View" class="view" style="display:none;">
             <h1>Team 2</h1>
             <div class="row-container" id="teamTwo_CardsRow">
-                <div class="card-slot" data-slot="1"></div>
-                <div class="card-slot" data-slot="2"></div>
-                <div class="card-slot" data-slot="3"></div>
-                <div class="card-slot" data-slot="4"></div>
-                <div class="card-slot" data-slot="5"></div>
             </div>
             <center>
                 <label for="totalPointsTeam2">Total Score:</label> <span id="totalScoreTeam2">0</span>
@@ -135,11 +160,6 @@
         <div id="team3View" class="view" style="display:none;">
             <h1>Team 3</h1>
             <div class="row-container" id="teamThree_CardsRow">
-                <div class="card-slot" data-slot="1"></div>
-                <div class="card-slot" data-slot="2"></div>
-                <div class="card-slot" data-slot="3"></div>
-                <div class="card-slot" data-slot="4"></div>
-                <div class="card-slot" data-slot="5"></div>
             </div>
             <center>
                 <label for="totalPointsTeam3">Total Score:</label> <span id="totalScoreTeam3">0</span>

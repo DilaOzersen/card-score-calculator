@@ -42,7 +42,12 @@ app.post('/api/register', async (req, res) => {
         await usersDB.put({
             _id: username,
             password: hashedPassword,
-            inventory: []
+            inventory: [],
+            teams: [
+                [],
+                [],
+                []
+            ]
         });
         res.status(201).send('User registered successfully');
     } catch (err) {
@@ -102,7 +107,7 @@ app.put('/api/user/:username', async (req, res) => {
     }
 });
 
-// Serve the main HTML file
+// default
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, '../frontend', 'index.html'));
 });

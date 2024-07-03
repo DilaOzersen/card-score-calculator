@@ -28,6 +28,11 @@ cd <project-directory>
     Run this command to populate all the cards in the database:
 
     node db.js
+    
+
+    If you ever need to purge users, run:
+    
+    node purge_users.js
 
 4. Running the Server
 

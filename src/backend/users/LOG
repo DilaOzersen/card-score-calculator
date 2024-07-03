@@ -1,5 +1,5 @@
-2024/07/02-22:06:27.135 ccc4 Recovering log #478
-2024/07/02-22:06:27.137 ccc4 Level-0 table #480: started
-2024/07/02-22:06:27.169 ccc4 Level-0 table #480: 1027473 bytes OK
-2024/07/02-22:06:27.224 ccc4 Delete type=0 #478
-2024/07/02-22:06:27.225 ccc4 Delete type=3 #476
+2024/07/02-22:10:01.538 a19c Recovering log #481
+2024/07/02-22:10:01.538 a19c Level-0 table #483: started
+2024/07/02-22:10:01.544 a19c Level-0 table #483: 73557 bytes OK
+2024/07/02-22:10:01.555 a19c Delete type=0 #481
+2024/07/02-22:10:01.555 a19c Delete type=3 #479

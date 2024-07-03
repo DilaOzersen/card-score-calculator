@@ -273,7 +273,7 @@
       {
         "id": 28,
         "name": "Jade-Colored Reverberations",
-        "character": "Shioriko Mifune",
+        "character": "Mifune Shioriko",
         "icon": "https://i.idol.st/u/card/icon/362UR-Mifune-Shioriko-%E3%81%82%E3%81%AA%E3%81%9F%E3%81%8B%E3%82%89%E8%A6%8B%E3%81%A6-%E3%81%A9%E3%81%86%E3%81%A7%E3%81%99%E3%81%8B-%E7%BF%A1%E7%BF%A0%E8%89%B2%E3%81%AE%E6%AE%8B%E9%9F%BF-QOZBDx.png",
         "appeal 1": 7800,
         "stamina 1": 9880,
@@ -299,6 +299,206 @@
         "stamina 1": 7800,
         "technique 1": 10400,
         "leaderSkill": "Increase Voltage gain by 7% for 5 Notes."
+      },
+      {
+        "id": 31,
+        "name": "Mysterious Jewelry",
+        "character": "Mifune Shiroriko",
+        "icon": "https://i.idol.st/u/card/icon/927UR-Mifune-Shioriko-%E3%83%9D%E3%83%BC%E3%82%BA%E3%82%92%E8%80%83%E3%81%88%E3%81%A6%E3%81%BF%E3%81%9F%E3%82%93%E3%81%A7%E3%81%99%E3%81%8C-Mysterious-Jewelry-mxaN1F.png",
+        "appeal 1": 7800,
+        "stamina 1": 11700,
+        "technique 1": 6500,
+        "leaderSkill": "Reduce Stamina damage by 20% for 4 Notes."
+      },
+      {
+        "id": 32,
+        "name": "Dream Utopia",
+        "character": "Watanabe You",
+        "icon": "https://i.idol.st/u/card/icon/916UR-Watanabe-You-%E3%82%84%E3%81%A3%E3%81%9F%E3%81%82-%E5%84%AA%E5%8B%9D%E3%81%A0%E3%83%BC-Dream-Utopia-eNU0KU.png",
+        "appeal 1": 7800,
+        "stamina 1": 13400,
+        "technique 1": 9700,
+        "leaderSkill": "SP Gauge gain increases by 5.4% for 10 Notes."
+      },
+      {
+        "id": 33,
+        "name": "Little Vampire",
+        "character": "Kurosawa Ruby",
+        "icon": "https://i.idol.st/u/card/icon/902UR-Kurosawa-Ruby-%E3%82%B3%E3%83%AC-%E3%81%A3%E3%81%A6%E9%81%B8%E3%81%B9%E3%81%AA%E3%81%8F%E3%81%A6-Little-Vampire-RygQHW.png",
+        "appeal 1": 7100,
+        "stamina 1": 9200,
+        "technique 1": 10400,
+        "leaderSkill": "Gain 7% of max SP as SP Gauge."
+      },
+      {
+        "id": 34,
+        "name": "Romantic Express",
+        "character": "Takami Chika",
+        "icon": "https://i.idol.st/u/card/icon/884UR-Takami-Chika-%E3%81%82-%E3%81%93%E3%82%8C%E3%82%82%E3%81%82%E3%81%AA%E3%81%9F%E3%81%AB%E3%81%B4%E3%81%A3%E3%81%9F%E3%82%8A-Romantic-Express-jS74rE.png",
+        "appeal 1": 12480,
+        "stamina 1": 4420,
+        "technique 1": 9100,
+        "leaderSkill": "Increase Voltage gain by 7% for 5 Notes."
+      },
+      {
+        "id": 35,
+        "name": "An Elegant Aquarium",
+        "character": "Kurosawa Dia",
+        "icon": "https://i.idol.st/u/card/icon/875UR-Kurosawa-Dia-%E3%82%8F%E3%81%9F%E3%81%8F%E3%81%97%E3%81%AE%E6%83%B3%E3%81%84%E3%81%AF%E5%B1%8A%E3%81%8D%E3%81%BE%E3%81%97%E3%81%9F%E3%81%8B-An-Elegant-Aquarium-81yIu2.png",
+        "appeal 1": 11700,
+        "stamina 1": 5200,
+        "technique 1": 9100,
+        "leaderSkill": "Gain 30% of own Appeal as Voltage."
+      },
+      {
+        "id": 36,
+        "name": "Sweet, Sweet Nico-Ni",
+        "character": "Yazawa Nico",
+        "icon": "https://i.idol.st/u/card/icon/866UR-Yazawa-Nico-%E3%81%82%E3%82%93%E3%81%9F%E3%81%8C%E3%81%82%E3%82%93%E3%81%BE%E3%82%8A%E3%81%AB%E3%82%82%E8%A6%8B%E3%81%A6%E3%81%9F%E3%81%8B%E3%82%89-Sweet-Sweet-Nico-Ni-ZFMvVg.png",
+        "appeal 1": 10800,
+        "stamina 1": 5800,
+        "technique 1": 10400,
+        "leaderSkill": "Voltage gained from next SP Skill increases by 38% of own Appeal."
+      },
+      {
+        "id": 37,
+        "name": "Briar Rose",
+        "character": "Osaka Shizuku",
+        "icon": "https://i.idol.st/u/card/icon/831UR-Osaka-Shizuku-%E3%81%93%E3%81%AE%E5%AD%90%E3%81%8C%E3%81%99%E3%81%A3%E3%81%94%E3%81%8F%E3%81%8B%E3%82%8F%E3%81%84%E3%81%8F%E3%81%A6-Briar-Rose-4P4QWe.png",
+        "appeal 1": 6750,
+        "stamina 1": 15700,
+        "technique 1": 5290,
+        "leaderSkill": "Recover 20% of your stamina."
+      },
+      {
+        "id": 38,
+        "name": "A Lady in Spring Sun",
+        "character": "Tsushima Yoshiko",
+        "icon": "https://i.idol.st/u/card/icon/843UR-Tsushima-Yoshiko-%E3%83%A8%E3%83%8F%E3%83%8D%E3%81%AE%E9%81%8B%E6%B0%97%E3%82%82%E4%B8%8A%E6%98%87%E9%96%93%E9%81%95%E3%81%84%E7%84%A1%E3%81%97-A-Lady-in-Spring-Sun-a7AhK8.png",
+        "appeal 1": 7200,
+        "stamina 1": 11700,
+        "technique 1": 9500,
+        "leaderSkill": "Recover 20% of your stamina."
+      },
+      {
+        "id": 39,
+        "name": "Snow Princess",
+        "character": "Ohara Mari",
+        "icon": "https://i.idol.st/u/card/icon/821UR-Ohara-Mari-%E3%81%9D%E3%82%8C%E3%81%98%E3%82%83%E3%81%82-%E4%B8%80%E7%B7%92%E3%81%AB%E3%83%86%E3%82%A4%E3%82%AF%E3%82%AA%E3%83%95-Snow-Princess-wgZ7GK.png",
+        "appeal 1": 6500,
+        "stamina 1": 8700,
+        "technique 1": 10400,
+        "leaderSkill": "Increase Appeal by 7% for 5 Notes."
+      },
+      {
+        "id": 40,
+        "name": "Captivating Nighttime Garden",
+        "character": "Asaka Karin",
+        "icon": "https://i.idol.st/u/card/icon/813UR-Asaka-Karin-%E5%85%88%E8%BC%A9%E3%82%92%E3%81%8B%E3%82%89%E3%81%8B%E3%82%8F%E3%81%AA%E3%81%84%E3%81%AE-Captivating-Nighttime-Garden-OJHaw1.png",
+        "appeal 1": 5700,
+        "stamina 1": 12300,
+        "technique 1": 9600,
+        "leaderSkill": "Gain 7% of max SP as SP Gauge."
+      },
+      {
+        "id": 41,
+        "name": "ALL STAR Princess",
+        "character": "Uehara Ayumu",
+        "icon": "https://i.idol.st/u/card/icon/786UR-Uehara-Ayumu-%E3%81%82%E3%81%AA%E3%81%9F%E3%82%82%E8%BF%91%E3%81%8F%E3%81%AB%E3%81%84%E3%81%A6%E3%81%8F%E3%82%8C%E3%81%AA%E3%81%84-ALL-STAR-Princess-dLWo8c.png",
+        "appeal 1": 6540,
+        "stamina 1": 9800,
+        "technique 1": 8700,
+        "leaderSkill": "Restore 28% of own stamina."
+      },
+      {
+        "id": 42,
+        "name": "Festival Hayashi Rep",
+        "character": "Ayase Eli",
+        "icon": "https://i.idol.st/u/card/icon/765UR-Ayase-Eli-Keep-Up-with-Me-Til-the-End-Guys-Festival-Hayashi-Rep-4Lpx0w.png",
+        "appeal 1": 15360,
+        "stamina 1": 4300,
+        "technique 1": 5400,
+        "leaderSkill": "Gain 23% of own Appeal as Voltage."
+      },
+      {
+        "id": 43,
+        "name": "Star Seeker",
+        "character": "Yuki Setsuna",
+        "icon": "https://i.idol.st/u/card/icon/737UR-Yuki-Setsuna-We-Are-the-Closest-of-Friends-Star-Seeker-XmFYDF.png",
+        "appeal 1": 10700,
+        "stamina 1": 6730,
+        "technique 1": 7200,
+        "leaderSkill": "Gain 25% of own Appeal as Voltage."
+      },
+      {
+        "id": 44,
+        "name": "Marriage Proposition",
+        "character": "Mia Taylor",
+        "icon": "https://i.idol.st/u/card/icon/729UR-Mia-Taylor-%E3%83%9C%E3%82%AF%E3%81%AE%E6%AD%8C%E3%82%92%E6%AD%8C%E3%82%8F%E3%81%9B%E3%81%A6%E3%82%82%E3%82%89%E3%81%86%E3%81%AD-Marriage-Proposition-3YQ7sO.png",
+        "appeal 1": 5840,
+        "stamina 1": 11750,
+        "technique 1": 8900,
+        "leaderSkill": "Gain 17% of own stamina as a shield."
+      },
+      {
+        "id": 45,
+        "name": "Powerful☆Rock Girls",
+        "character": "Konoe Kanata",
+        "icon": "https://i.idol.st/u/card/icon/721UR-Konoe-Kanata-%E9%81%A5%E3%81%A1%E3%82%83%E3%82%93%E3%81%8C%E5%A4%A7%E5%A5%BD%E3%81%8D%E3%81%AA%E3%81%AE%E3%81%A0-Powerful-Rock-Girls-Y7Kvgm.png",
+        "appeal 1": 12000,
+        "stamina 1": 5300,
+        "technique 1": 9900,
+        "leaderSkill": "Increase Voltage gain by 5% for 5 Notes."
+      },
+      {
+        "id": 46,
+        "name": "An Elegant Night Party",
+        "character": "Minami Kotori",
+        "icon": "https://i.idol.st/u/card/icon/712UR-Minami-Kotori-%E3%81%88%E3%81%B8%E3%81%B8-%E6%9F%94%E8%BB%9F%E3%81%AF%E5%BE%97%E6%84%8F%E3%81%AA%E3%82%93%E3%81%A0-An-Elegant-Night-Party-lgABIf.png",
+        "appeal 1": 11540,
+        "stamina 1": 6100,
+        "technique 1": 7080,
+        "leaderSkill": "Gain 30% of own Appeal as Voltage."
+      },
+      {
+        "id": 47,
+        "name": "The Moonlit Night's Invitation",
+        "character": "Miyashita Ai",
+        "icon": "https://i.idol.st/u/card/icon/696UR-Miyashita-Ai-%E3%81%93%E3%82%8C%E3%81%8F%E3%82%89%E3%81%84%E4%BD%99%E8%A3%95%E4%BD%99%E8%A3%95-The-Moonlit-Night-s-Invitation-Nn2CsV.png",
+        "appeal 1": 11300,
+        "stamina 1": 7080,
+        "technique 1": 9400,
+        "leaderSkill": "Gain 7% of max SP as SP Gauge."
+      },
+      {
+        "id": 48,
+        "name": "The Time Has Come to Fulfill My Vow",
+        "character": "Hoshizora Rin",
+        "icon": "https://i.idol.st/u/card/icon/686UR-Hoshizora-Rin-%E3%81%A9%E3%81%86%E3%81%8B%E3%81%AB%E3%82%83-The-Time-Has-Come-To-Fulfill-My-Vow-n0HAuq.png",
+        "appeal 1": 10300,
+        "stamina 1": 7450,
+        "technique 1": 10100,
+        "leaderSkill": "Gain 48% of own Appeal as Voltage."
+      },
+      {
+        "id": 49,
+        "name": "Cherry Blossom Girl of the Night",
+        "character": "Emma Verde",
+        "icon": "https://i.idol.st/u/card/icon/685UR-Emma-Verde-%E6%98%A5%E3%82%92%E6%84%9F%E3%81%98%E3%81%A6%E3%82%8B-Cherry-Blossom-Girl-of-the-Night-VE7IQU.png",
+        "appeal 1": 12300,
+        "stamina 1": 6070,
+        "technique 1": 9040,
+        "leaderSkill": "Gain 25% of own Appeal as Voltage."
+      },
+      {
+        "id": 50,
+        "name": "Sweet Rose",
+        "character": "Nishikino Maki",
+        "icon": "https://i.idol.st/u/card/icon/648UR-Lanzhu-Zhong-%E6%B1%BA%E3%81%BE%E3%82%8A%E3%81%AD-%E6%97%A9%E3%81%8F%E3%81%84%E3%81%8F%E3%82%8F%E3%82%88-Like-a-Doll-vC0Oar.png",
+        "appeal 1": 12500,
+        "stamina 1": 9600,
+        "technique 1": 8500,
+        "leaderSkill": "Increase Voltage gain by 7.8% for 3 Notes."
       }
     ]
   }

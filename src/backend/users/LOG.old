@@ -1,5 +1,8 @@
-2024/07/02-21:33:45.486 52f4 Recovering log #451
-2024/07/02-21:33:45.486 52f4 Level-0 table #458: started
-2024/07/02-21:33:45.494 52f4 Level-0 table #458: 237 bytes OK
-2024/07/02-21:33:45.506 52f4 Delete type=0 #451
-2024/07/02-21:33:45.506 52f4 Delete type=3 #449
+2024/07/02-22:03:00.964 517c Recovering log #463
+2024/07/02-22:03:00.966 517c Level-0 table #466: started
+2024/07/02-22:03:00.973 517c Level-0 table #466: 536785 bytes OK
+2024/07/02-22:03:00.984 517c Delete type=0 #463
+2024/07/02-22:03:00.984 517c Delete type=3 #460
+2024/07/02-22:03:00.985 37b4 Compacting 4@0 + 5@1 files
+2024/07/02-22:03:01.025 37b4 Generated table #468@0: 579 keys, 2119603 bytes
+2024/07/02-22:03:01.042 37b4 compacted to: files[ 4 5 0 0 0 0 0 ]

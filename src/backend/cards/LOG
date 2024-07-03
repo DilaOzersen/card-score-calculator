@@ -1,5 +1,5 @@
-2024/06/30-20:43:27.017 aaac Recovering log #28
-2024/06/30-20:43:27.017 aaac Level-0 table #31: started
-2024/06/30-20:43:27.024 aaac Level-0 table #31: 237 bytes OK
-2024/06/30-20:43:27.050 aaac Delete type=0 #28
-2024/06/30-20:43:27.050 aaac Delete type=3 #26
+2024/07/02-20:07:05.856 818 Recovering log #6
+2024/07/02-20:07:05.856 818 Level-0 table #8: started
+2024/07/02-20:07:05.865 818 Level-0 table #8: 237 bytes OK
+2024/07/02-20:07:05.880 818 Delete type=0 #6
+2024/07/02-20:07:05.880 818 Delete type=3 #4

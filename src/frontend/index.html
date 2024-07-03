@@ -90,81 +90,175 @@
             <div class="team-container">
                 <div class="team">
                     <button class="team-button" id="team1Button">Team 1</button>
-                    <div class="row-container" id="teamOne_CardsPreview"></div>
+                    <div class="row-container" id="team1_CardsPreview"></div>
                 </div>
                 <div class="team">
                     <button class="team-button" id="team2Button">Team 2</button>
-                    <div class="row-container" id="teamTwo_CardsPreview"></div>
+                    <div class="row-container" id="team2_CardsPreview"></div>
                 </div>
                 <div class="team">
                     <button class="team-button" id="team3Button">Team 3</button>
-                    <div class="row-container" id="teamThree_CardsPreview"></div>
+                    <div class="row-container" id="team3_CardsPreview"></div>
                 </div>
             </div>
         </div>
         <div id="team1View" class="view" style="display:none;">
             <h1>Team 1</h1>
-            <div class="row-container" id="teamOne_CardsRow">
-                <div>
-                    <label for="card1Dropdown">Card 1:</label>
-                    <select id="team1Card1Dropdown" onchange="displayCardIcon('team1Card1Dropdown', 'team1Card1Icon')">
-                        <option value="">Select a card</option>
-                    </select>
+            <div class="team-layout">
+                <div class="dropdowns-container">
+                    <div class="dropdown-container">
+                        <label for="team1Card1Dropdown">Card 1:</label>
+                        <select id="team1Card1Dropdown" class="card-dropdown">
+                            <option value="">Select a card</option>
+                        </select>
+                    </div>
+                    <div class="dropdown-container">
+                        <label for="team1Card2Dropdown">Card 2:</label>
+                        <select id="team1Card2Dropdown" class="card-dropdown">
+                            <option value="">Select a card</option>
+                        </select>
+                    </div>
+                    <div class="dropdown-container">
+                        <label for="team1Card3Dropdown">Card 3:</label>
+                        <select id="team1Card3Dropdown" class="card-dropdown">
+                            <option value="">Select a card</option>
+                        </select>
+                    </div>
+                    <div class="dropdown-container">
+                        <label for="team1Card4Dropdown">Card 4:</label>
+                        <select id="team1Card4Dropdown" class="card-dropdown">
+                            <option value="">Select a card</option>
+                        </select>
+                    </div>
+                    <div class="dropdown-container">
+                        <label for="team1Card5Dropdown">Card 5:</label>
+                        <select id="team1Card5Dropdown" class="card-dropdown">
+                            <option value="">Select a card</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="images-container">
                     <img id="team1Card1Icon" class="card-icon" src="" alt="Card Icon">
-                </div>
-                <div>
-                    <label for="card2Dropdown">Card 2:</label>
-                    <select id="team1Card2Dropdown" onchange="displayCardIcon('team1Card2Dropdown', 'team1Card2Icon')">
-                        <option value="">Select a card</option>
-                    </select>
                     <img id="team1Card2Icon" class="card-icon" src="" alt="Card Icon">
-                </div>
-                <div>
-                    <label for="card3Dropdown">Card 3:</label>
-                    <select id="team1Card3Dropdown" onchange="displayCardIcon('team1Card3Dropdown', 'team1Card3Icon')">
-                        <option value="">Select a card</option>
-                    </select>
                     <img id="team1Card3Icon" class="card-icon" src="" alt="Card Icon">
-                </div>
-                <div>
-                    <label for="card4Dropdown">Card 4:</label>
-                    <select id="team1Card4Dropdown" onchange="displayCardIcon('team1Card4Dropdown', 'team1Card4Icon')">
-                        <option value="">Select a card</option>
-                    </select>
                     <img id="team1Card4Icon" class="card-icon" src="" alt="Card Icon">
-                </div>
-                <div>
-                    <label for="card5Dropdown">Card 5:</label>
-                    <select id="team1Card5Dropdown" onchange="displayCardIcon('team1Card5Dropdown', 'team1Card5Icon')">
-                        <option value="">Select a card</option>
-                    </select>
                     <img id="team1Card5Icon" class="card-icon" src="" alt="Card Icon">
                 </div>
             </div>
             <center>
-                <label for="totalPointsTeam1">Total Score:</label> <span id="totalScoreTeam1">0</span>
+                <span class="appeal-total">Total Appeal:</span> <span id="totalAppealteam1">0</span>
+                <span class="stamina-total">Total Stamina:</span> <span id="totalStaminateam1">0</span>
+                <span class="technique-total">Total Technique:</span> <span id="totalTechniqueteam1">0</span>
                 <br>
-                <label for="leaderSkill">Leader's Skill:</label> <span id="leaderSkillTeam1">None</span>
+                <span class="total-score">Total Score:</span> <span id="totalScoreteam1">0</span>
+                <br>
+                <span class="leader-skill">Leader Skill:</span> <span id="leaderSkillteam1">None</span>
             </center>
         </div>
         <div id="team2View" class="view" style="display:none;">
             <h1>Team 2</h1>
-            <div class="row-container" id="teamTwo_CardsRow">
+            <div class="team-layout">
+                <div class="dropdowns-container">
+                    <div class="dropdown-container">
+                        <label for="team2Card1Dropdown">Card 1:</label>
+                        <select id="team2Card1Dropdown" class="card-dropdown">
+                            <option value="">Select a card</option>
+                        </select>
+                    </div>
+                    <div class="dropdown-container">
+                        <label for="team2Card2Dropdown">Card 2:</label>
+                        <select id="team2Card2Dropdown" class="card-dropdown">
+                            <option value="">Select a card</option>
+                        </select>
+                    </div>
+                    <div class="dropdown-container">
+                        <label for="team2Card3Dropdown">Card 3:</label>
+                        <select id="team2Card3Dropdown" class="card-dropdown">
+                            <option value="">Select a card</option>
+                        </select>
+                    </div>
+                    <div class="dropdown-container">
+                        <label for="team2Card4Dropdown">Card 4:</label>
+                        <select id="team2Card4Dropdown" class="card-dropdown">
+                            <option value="">Select a card</option>
+                        </select>
+                    </div>
+                    <div class="dropdown-container">
+                        <label for="team2Card5Dropdown">Card 5:</label>
+                        <select id="team2Card5Dropdown" class="card-dropdown">
+                            <option value="">Select a card</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="images-container">
+                    <img id="team2Card1Icon" class="card-icon" src="" alt="Card Icon">
+                    <img id="team2Card2Icon" class="card-icon" src="" alt="Card Icon">
+                    <img id="team2Card3Icon" class="card-icon" src="" alt="Card Icon">
+                    <img id="team2Card4Icon" class="card-icon" src="" alt="Card Icon">
+                    <img id="team2Card5Icon" class="card-icon" src="" alt="Card Icon">
+                </div>
             </div>
             <center>
-                <label for="totalPointsTeam2">Total Score:</label> <span id="totalScoreTeam2">0</span>
+                <span class="appeal-total">Total Appeal:</span> <span id="totalAppealteam2">0</span>
+                <span class="stamina-total">Total Stamina:</span> <span id="totalStaminateam2">0</span>
+                <span class="technique-total">Total Technique:</span> <span id="totalTechniqueteam2">0</span>
                 <br>
-                <label for="leaderSkill">Leader's Skill:</label> <span id="leaderSkillTeam2">None</span>
-            </center>
+                <span class="total-score">Total Score:</span> <span id="totalScoreteam2">0</span>
+                <br>
+                <span class="leader-skill">Leader Skill:</span> <span id="leaderSkillteam2">None</span>
+            </center>        
         </div>
         <div id="team3View" class="view" style="display:none;">
             <h1>Team 3</h1>
-            <div class="row-container" id="teamThree_CardsRow">
+            <div class="team-layout">
+                <div class="dropdowns-container">
+                    <div class="dropdown-container">
+                        <label for="team3Card1Dropdown">Card 1:</label>
+                        <select id="team3Card1Dropdown" class="card-dropdown">
+                            <option value="">Select a card</option>
+                        </select>
+                    </div>
+                    <div class="dropdown-container">
+                        <label for="team3Card2Dropdown">Card 2:</label>
+                        <select id="team3Card2Dropdown" class="card-dropdown">
+                            <option value="">Select a card</option>
+                        </select>
+                    </div>
+                    <div class="dropdown-container">
+                        <label for="team3Card3Dropdown">Card 3:</label>
+                        <select id="team3Card3Dropdown" class="card-dropdown">
+                            <option value="">Select a card</option>
+                        </select>
+                    </div>
+                    <div class="dropdown-container">
+                        <label for="team3Card4Dropdown">Card 4:</label>
+                        <select id="team3Card4Dropdown" class="card-dropdown">
+                            <option value="">Select a card</option>
+                        </select>
+                    </div>
+                    <div class="dropdown-container">
+                        <label for="team3Card5Dropdown">Card 5:</label>
+                        <select id="team3Card5Dropdown" class="card-dropdown">
+                            <option value="">Select a card</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="images-container">
+                    <img id="team3Card1Icon" class="card-icon" src="" alt="Card Icon">
+                    <img id="team3Card2Icon" class="card-icon" src="" alt="Card Icon">
+                    <img id="team3Card3Icon" class="card-icon" src="" alt="Card Icon">
+                    <img id="team3Card4Icon" class="card-icon" src="" alt="Card Icon">
+                    <img id="team3Card5Icon" class="card-icon" src="" alt="Card Icon">
+                </div>
             </div>
             <center>
-                <label for="totalPointsTeam3">Total Score:</label> <span id="totalScoreTeam3">0</span>
+                <span class="appeal-total">Total Appeal:</span> <span id="totalAppealteam3">0</span>
+                <span class="stamina-total">Total Stamina:</span> <span id="totalStaminateam3">0</span>
+                <span class="technique-total">Total Technique:</span> <span id="totalTechniqueteam3">0</span>
                 <br>
-                <label for="leaderSkill">Leader's Skill:</label> <span id="leaderSkillTeam3">None</span>
+                <span class="total-score">Total Score:</span> <span id="totalScoreteam3">0</span>
+                <br>
+                <span class="leader-skill">Leader Skill:</span> <span id="leaderSkillteam3">None</span>
             </center>
         </div>
     </div>

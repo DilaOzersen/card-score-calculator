@@ -43,11 +43,11 @@ app.post('/api/register', async (req, res) => {
             _id: username,
             password: hashedPassword,
             inventory: [],
-            teams: [
-                [],
-                [],
-                []
-            ]
+            teams: {
+                team1: new Array(5).fill(null),
+                team2: new Array(5).fill(null),
+                team3: new Array(5).fill(null)
+            }
         });
         res.status(201).send('User registered successfully');
     } catch (err) {

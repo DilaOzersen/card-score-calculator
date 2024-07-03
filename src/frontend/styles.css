@@ -171,3 +171,83 @@ button {
 .team-edit.active {
     display: block;
 }
+
+/* team view attributes */
+.card-slot {
+    margin: 10px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.card-dropdown {
+    width: 100%;
+    padding: 5px;
+}
+
+.card-preview {
+    display: inline-block;
+    margin: 5px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.team-layout {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-bottom: 20px;
+}
+
+.dropdowns-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.dropdown-container {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.card-dropdown {
+    width: 200px;
+}
+
+.images-container {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.card-icon {
+    width: 125px; 
+    height: auto;
+}
+
+.team-stats {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.appeal-total {
+    color: rgb(244, 131, 150);
+    text-shadow: 0 0 5px rgba(244, 131, 150, 0.8);
+}
+
+.technique-total {
+    color: #DAA520;
+    text-shadow: 0 0 5px rgba(218, 165, 32, 0.8);
+}
+
+.stamina-total {
+    color: rgb(115, 232, 115);
+    text-shadow: 0 0 5px rgba(115, 232, 115, 0.8); 
+}
+
+.total-score, .leader-skill {
+    font-weight: bold;
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.8); 
+}

@@ -27,7 +27,7 @@ cd <project-directory>
 
     Run this command to populate all the cards in the database:
 
-    node .\Populate-pouchdb.js
+    node db.js
 
 4. Running the Server
 

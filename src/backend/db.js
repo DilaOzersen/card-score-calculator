@@ -6,50 +6,34 @@ import { fileURLToPath } from 'url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-// Correct the path to PouchDB database
-const db = new PouchDB(path.join(__dirname, 'cards'));
+let db = new PouchDB(path.join(__dirname, 'cards'));
 
-async function clearDatabase() {
+async function deleteAndRecreateDatabase() {
     try {
-        console.log('Clearing database...');
-        const result = await db.allDocs();
-        for (const row of result.rows) {
-            await db.remove(row.id, row.value.rev);
-            console.log(`Removed doc: ${row.id}`);
-        }
-        console.log('Database cleared');
+        await db.destroy();
+
+        // Recreate the database
+        db = new PouchDB(path.join(__dirname, 'cards'));
+        console.log('Database recreated');
     } catch (error) {
-        console.error('Error clearing database:', error);
+        console.error('Error deleting database:', error);
     }
 }
 
 async function populateDatabase() {
     try {
         const filePath = path.join(__dirname, 'cards.json');
-        console.log(`Reading file from ${filePath}`);
-        fs.readFile(filePath, 'utf8', async (err, data) => {
-            if (err) {
-                console.error('Error reading cards.json:', err);
-                return;
-            }
+        const data = fs.readFileSync(filePath, 'utf8');
+        const jsonData = JSON.parse(data);
+        const cards = jsonData.cards;
 
-            console.log('File read successfully');
-            const cards = JSON.parse(data).cards;
-            console.log(`Read ${cards.length} cards from cards.json`);
-            for (const card of cards) {
-                try {
-                    await db.put({
-                        _id: new Date().toISOString() + '-' + card.id,
-                        ...card
-                    });
-                    console.log(`Inserted card: ${card.name}`);
-                } catch (error) {
-                    console.error('Error inserting card:', error);
-                }
-            }
-            console.log('Initial data loaded into PouchDB');
-            verifyData();
-        });
+        const docs = cards.map(card => ({
+            _id: new Date().toISOString() + '-' + card.id,
+            ...card
+        }));
+
+        await db.bulkDocs(docs);
+        verifyData();
     } catch (error) {
         console.error('Error populating database:', error);
     }
@@ -58,7 +42,7 @@ async function populateDatabase() {
 async function verifyData() {
     try {
         const result = await db.allDocs({ include_docs: true });
-        console.log('Loaded cards:', JSON.stringify(result.rows.map(row => row.doc)));
+        const docs = result.rows.map(row => row.doc);
     } catch (error) {
         console.error('Error retrieving cards from database:', error);
     }
@@ -66,7 +50,7 @@ async function verifyData() {
 
 async function initializeDatabase() {
     try {
-        await clearDatabase();
+        await deleteAndRecreateDatabase();
         await populateDatabase();
     } catch (error) {
         console.error('Error initializing database:', error);

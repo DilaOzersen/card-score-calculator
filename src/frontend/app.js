@@ -20,6 +20,16 @@ document.addEventListener("DOMContentLoaded", () => {
             const teamNumber = viewId.charAt(4);
             populateTeamDropdowns(`team${teamNumber}`);
         }
+
+        // clear login fields when navigating to loginView
+        if (viewId === "loginView") {
+            clearLoginFields();
+        }
+
+        // clear register fields when navigating to registerView
+        if (viewId === "registerView") {
+            clearRegisterFields();
+        }
     }
     
     // event listeners that help you navigate when a button is clicked
@@ -36,7 +46,7 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("team2Button").addEventListener("click", () => navigate("team2View"));
     document.getElementById("team3Button").addEventListener("click", () => navigate("team3View"));
 
-    //login/register variables
+    // login/register variables
     const loginInformation = document.getElementById("loginInformation");
     const registerInformation = document.getElementById("registerInformation");
     const showRegister = document.getElementById("showRegister");
@@ -50,6 +60,17 @@ document.addEventListener("DOMContentLoaded", () => {
         } else {
             menu.style.display = "none";
         }
+    }
+
+    // clears login/register fields when called
+    function clearLoginFields() {
+        document.getElementById("loginUsername").value = '';
+        document.getElementById("loginPassword").value = '';
+    }
+
+    function clearRegisterFields() {
+        document.getElementById('registeredUsername').value = '';
+        document.getElementById('registeredPassword').value = '';
     }
 
     // function to display the user's inventory
@@ -120,12 +141,25 @@ document.addEventListener("DOMContentLoaded", () => {
                 alert("Successful login, welcome!");
                 navigate("homeView");
                 showMenu(true);
+                populateTeamDropdowns('team1');
+                populateTeamDropdowns('team2');
+                populateTeamDropdowns('team3');
                 displayUserInventory();
+                loadUserTeams();
+                populateTeamCardPreviews('team1');
+                populateTeamCardPreviews('team2');
+                populateTeamCardPreviews('team3');
             } else {
-                response.text().then(text => alert(text));
+                response.text().then(text => {
+                    alert(text)
+                    clearLoginFields();
+            });
             }
         })
-        .catch(error => console.error('Error logging in:', error));
+        .catch(error => {
+            console.error('Error logging in:', error)
+            clearLoginFields();
+        });
     });
 
     // switches to registerView when the user click the showRegister element
@@ -171,17 +205,11 @@ document.addEventListener("DOMContentLoaded", () => {
                             const randomIndex = Math.floor(Math.random() * allCards.length);
                             newCard = allCards[randomIndex];
                             attempts++;
-                            if (attempts > allCards.length) {
-                                alert("Unable to find a new card. Try again.");
-                                return;
-                            }
                         } while (user.inventory.some(c => c.id === newCard.id));
 
                         if (newCard) {
                             user.inventory.push(newCard);
                             newCards.push(newCard);
-                        } else {
-                            console.error('Failed to get a new card.');
                         }
                     }
                     fetch(`/api/user/${currentUser}`, {
@@ -220,10 +248,8 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 });
 
-// populates the dropdowns found on the team view pages
-// ALL CODE BELOW IS A WORK IN PROGRESS.
+// populates the dropdowns and fields found on the team view pages
 function populateTeamDropdowns(teamName) {
-    const teamCards = teams[teamName];
     const dropdownIds = [
         `${teamName}Card1Dropdown`, `${teamName}Card2Dropdown`, `${teamName}Card3Dropdown`, 
         `${teamName}Card4Dropdown`, `${teamName}Card5Dropdown`
@@ -233,6 +259,8 @@ function populateTeamDropdowns(teamName) {
         fetch(`/api/user/${currentUser}`)
             .then(response => response.json())
             .then(user => {
+                const teamCards = user.teams[teamName] || new Array(5).fill(null);
+
                 dropdownIds.forEach((dropdownId, index) => {
                     const dropdown = document.getElementById(dropdownId);
                     if (!dropdown) {
@@ -242,37 +270,72 @@ function populateTeamDropdowns(teamName) {
                     
                     dropdown.innerHTML = '<option value="">Select a card</option>';
         
-                    // Populate options with user's card names
-                    const availableCards = user.inventory.filter(card => !teamCards.includes(card.name));
-                    availableCards.forEach(card => {
+                    // populate options with card names
+                    user.inventory.forEach(card => {
                         const option = document.createElement('option');
                         option.value = card.name;
                         option.textContent = card.name;
                         dropdown.appendChild(option);
                     });
 
-                    // Add event listener to update team data on selection change
+                    if (teamCards[index]) {
+                        dropdown.value = teamCards[index].name;
+                    }
+
+                    // event listener for when user changes any dropdown
                     dropdown.addEventListener('change', (event) => {
                         const selectedCardName = event.target.value;
+                        
+                        // if "Select a card" is chosen, keep the previous card
+                        if (selectedCardName === "") {
+                            event.target.value = teamCards[index] ? teamCards[index].name : "";
+                            return;
+                        }
 
-                        // Ensure teamCards is defined before accessing includes method
-                        if (teamCards && teamCards.includes(selectedCardName)) {
-                            alert(`The card "${selectedCardName}" is already in ${teamName}.`);
-                            dropdown.value = ''; // Reset dropdown to default
-                            console.log("duplicate cleared");
-                        } else {
-                            // Update teamCards only if it's defined
-                            if (teamCards) {
-                                teamCards[index] = selectedCardName;
-                                console.log(`Team ${teamName} updated:`, teams);
+                        const selectedCard = user.inventory.find(card => card.name === selectedCardName);
+                        
+                        if (selectedCard) {
+                            // checks for duplicates
+                            const isDuplicate = teamCards.some((card, cardIndex) => 
+                                card && card.name === selectedCard.name && cardIndex !== index
+                            );
+
+                            if (isDuplicate) {
+                                alert("This card is already in the team. Please select a different card.");
+                                event.target.value = teamCards[index] ? teamCards[index].name : "";
+                            } else {
+                                teamCards[index] = selectedCard;
+                                user.teams[teamName] = teamCards;
+                                
+                                // update user data, including teams
+                                fetch(`/api/user/${currentUser}`, {
+                                    method: 'PUT',
+                                    headers: {
+                                        'Content-Type': 'application/json'
+                                    },
+                                    body: JSON.stringify(user)
+                                })
+                                .then(response => response.json())
+                                .then(() => {
+                                    // after updating, refresh the display
+                                    populateTeamCardPreviews(teamName);
+                                    displayCardIcon(dropdownId, `${teamName}Card${index + 1}Icon`, teamName);
+                                    calculateAndDisplayTeamStats(teamName, teamCards);
+                                })
+                                .catch(error => console.error('Error updating user teams:', error));
                             }
-
-                            const iconId = `${teamName}Card${index + 1}Icon`;
-                            displayCardIcon(dropdownId, iconId, teamName);
                         }
                     });
-    
                 });
+
+                // after setting up all dropdowns, display the icons
+                dropdownIds.forEach((dropdownId, index) => {
+                    displayCardIcon(dropdownId, `${teamName}Card${index + 1}Icon`, teamName);
+                });
+
+                // refresh the team previews
+                calculateAndDisplayTeamStats(teamName, teamCards);
+                populateTeamCardPreviews(teamName);
             })
             .catch(error => console.error('Error fetching user data:', error));
     } else {
@@ -280,29 +343,23 @@ function populateTeamDropdowns(teamName) {
     }
 }
 
-function displayCardIcon(dropdownId, iconId, originalTeam) {
+// displays card icons for the cards selected from the dropdown
+function displayCardIcon(dropdownId, iconId, teamName) {
     const dropdown = document.getElementById(dropdownId);
     const selectedCardName = dropdown.value;
-
-    if (!selectedCardName) {
-        // If no card is selected, hide the icon
-        const icon = document.getElementById(iconId);
-        if (icon) {
-            icon.src = '';
-            icon.alt = 'Card Icon';
-            icon.style.display = 'none';
-        }
-        return;
-    }
 
     if (currentUser) {
         fetch(`/api/user/${currentUser}`)
             .then(response => response.json())
             .then(user => {
-                const teamName = dropdownId.replace("Dropdown", "");
-                console.log(teamName);
-                console.log(originalTeam)
-                const teamCards = teams[originalTeam] || [];
+                const teamCards = user.teams[teamName] || new Array(5).fill(null);
+                
+                // Calculate index based on the position in the dropdownIds array
+                const dropdownIds = [
+                    `${teamName}Card1Dropdown`, `${teamName}Card2Dropdown`, `${teamName}Card3Dropdown`, 
+                    `${teamName}Card4Dropdown`, `${teamName}Card5Dropdown`
+                ];
+                const index = dropdownIds.indexOf(dropdownId);
 
                 const selectedCard = user.inventory.find(card => card.name === selectedCardName);
                 const icon = document.getElementById(iconId);
@@ -312,18 +369,25 @@ function displayCardIcon(dropdownId, iconId, originalTeam) {
                     return;
                 }
 
-                if ((teamCards.includes(selectedCardName))) {
-                    icon.src = '';
-                    icon.alt = 'Card Icon';
-                    icon.style.display = 'none';
-                    console.log("duplicate here");
-                } 
-                
                 if (selectedCard) {
                     icon.src = selectedCard.icon;
                     icon.alt = selectedCard.name;
                     icon.style.display = 'inline-block';
-                    console.log("duplicate not here");
+                    
+                    // update the team data
+                    teamCards[index] = selectedCard;
+                    user.teams[teamName] = teamCards;
+
+                    // API call to update user data on the server
+                    fetch(`/api/user/${currentUser}`, {
+                        method: 'PUT',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify(user)
+                    })
+                    .then(response => response.json())
+                    .catch(error => console.error('Error updating user teams:', error));
                 } else {
                     icon.src = '';
                     icon.alt = 'Card Icon';
@@ -333,5 +397,75 @@ function displayCardIcon(dropdownId, iconId, originalTeam) {
             .catch(error => console.error('Error fetching user data:', error));
     } else {
         alert("Please log in to use the team system.");
+    }
+}
+
+// loads the user teams
+function loadUserTeams() {
+    if (currentUser) {
+        fetch(`/api/user/${currentUser}`)
+            .then(response => response.json())
+            .then(user => {
+                teams = user.teams;
+                populateTeamDropdowns('team1');
+                populateTeamDropdowns('team2');
+                populateTeamDropdowns('team3');
+            })
+            .catch(error => console.error('Error fetching user data:', error));
+    }
+}
+
+// displays all the teams on the teamView page
+function populateTeamCardPreviews(teamName) {
+    const teamCardsPreview = document.getElementById(`${teamName}_CardsPreview`);
+    if (currentUser) {
+        fetch(`/api/user/${currentUser}`)
+            .then(response => response.json())
+            .then(user => {
+                teamCardsPreview.innerHTML = '';
+                const teamCards = user.teams[teamName] || new Array(5).fill(null);
+                teamCards.forEach(card => {
+                    if (card) {
+                        const img = document.createElement('img');
+                        img.src = card.icon;
+                        img.alt = card.name;
+                        img.className = 'card-preview';
+                        teamCardsPreview.appendChild(img);
+                    } else {
+                        const placeholder = document.createElement('div');
+                        placeholder.className = 'card-placeholder';
+                        teamCardsPreview.appendChild(placeholder);
+                    }
+                });
+            })
+            .catch(error => console.error('Error fetching user data:', error));
+    }
+}
+
+// calculates all stats on the team pages
+function calculateAndDisplayTeamStats(teamName, teamCards) {
+    let totalAppeal = 0;
+    let totalStamina = 0;
+    let totalTechnique = 0;
+
+    teamCards.forEach(card => {
+        if (card) {
+            totalAppeal += card['appeal 1'] || 0;
+            totalStamina += card['stamina 1'] || 0;
+            totalTechnique += card['technique 1'] || 0;
+        }
+    });
+
+    const totalScore = totalAppeal + totalStamina + totalTechnique;
+
+    document.getElementById(`totalAppeal${teamName}`).textContent = totalAppeal;
+    document.getElementById(`totalStamina${teamName}`).textContent = totalStamina;
+    document.getElementById(`totalTechnique${teamName}`).textContent = totalTechnique;
+    document.getElementById(`totalScore${teamName}`).textContent = totalScore;
+
+    if (teamCards[0]) {
+        document.getElementById(`leaderSkill${teamName}`).textContent = teamCards[2].leaderSkill || 'None';
+    } else {
+        document.getElementById(`leaderSkill${teamName}`).textContent = 'None';
     }
 }

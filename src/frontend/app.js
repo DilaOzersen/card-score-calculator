@@ -198,13 +198,11 @@ document.addEventListener("DOMContentLoaded", () => {
                     }
 
                     let newCards = [];
-                    for (let i = 0; i < 2; i++) {
+                    for (let i = 0; i < 5; i++) {
                         let newCard;
-                        let attempts = 0;
                         do {
                             const randomIndex = Math.floor(Math.random() * allCards.length);
                             newCard = allCards[randomIndex];
-                            attempts++;
                         } while (user.inventory.some(c => c.id === newCard.id));
 
                         if (newCard) {
